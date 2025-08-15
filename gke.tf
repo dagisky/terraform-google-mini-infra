@@ -1,6 +1,7 @@
 resource "google_container_cluster" "primary" {
   name     = "${local.name_prefix}-gke"
   location = var.location
+  deletion_protection = false
 
   network    = google_compute_network.vpc.id
   subnetwork = google_compute_subnetwork.private.id
