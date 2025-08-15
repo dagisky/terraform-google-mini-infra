@@ -21,7 +21,7 @@ resource "google_sql_database_instance" "primary" {
 
     ip_configuration {
       ipv4_enabled = true
-      require_ssl  = false
+      ssl_mode = "ALLOW_UNENCRYPTED_AND_ENCRYPTED"
     }
 
     backup_configuration {
@@ -38,7 +38,7 @@ resource "google_sql_database" "app" {
 resource "random_password" "db" {
   length               = 16
   special              = true
-  override_characters  = "!@#%^*()-_=+"
+  override_special     = "!@#%^*()-_=+"
 }
 
 resource "google_sql_user" "app" {
