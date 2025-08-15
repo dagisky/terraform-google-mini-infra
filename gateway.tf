@@ -13,7 +13,7 @@ locals {
 
 resource "local_file" "openapi_rendered" {
   content  = local.rendered_openapi
-  filename = "${path.module}/openapi/openapi.rendered.yaml"
+  filename = "${path.module}/openapi/rendered.yaml"
 }
 
 resource "google_api_gateway_api" "api" {
