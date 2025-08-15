@@ -1,0 +1,26 @@
+openapi: 3.0.0
+info:
+  title: Minimal Startup API
+  version: 1.0.0
+servers:
+  - url: ${backend_url}
+paths:
+  /hello:
+    get:
+      security:
+        - firebase: []
+      x-google-backend:
+        address: ${backend_url}
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    firebase:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      x-google-issuer: https://securetoken.google.com/${project_id}
+      x-google-jwks_uri: https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com
+      x-google-audiences: ${project_id}
+

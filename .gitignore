@@ -1,0 +1,35 @@
+# Terraform working directory
+.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+*.tflock
+.terraform.lock.hcl
+crash.log
+crash.*.log
+
+# Plans
+*.tfplan
+plan.out
+
+# Sensitive variable files
+terraform.tfvars
+terraform.tfvars.json
+*.tfvars
+*.tfvars.json
+
+# Local overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Generated files in this repo
+openapi/openapi.rendered.yaml
+
+# IDE/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
